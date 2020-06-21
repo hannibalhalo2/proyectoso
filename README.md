@@ -9,7 +9,7 @@ Raúl Andrés Caicedo
 Lucia Fernanda Navarro García
 
 
-<b>Informe despliegue tecnologías FaaS, K8S, Inlets</b>
+<b><u>Informe despliegue tecnologías FaaS, K8S, Inlets</u></b>
 
 Este informe presenta las actividades realizadas para llevar a cabo el despliegue de tecnologías FaaS (Function as a Service), K8S (Kubernetes) e Inlets.
 A continuación se presenta el diagrama con la arquitectura de despliegue.
