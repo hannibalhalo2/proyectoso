@@ -1,25 +1,18 @@
 <b>INFORME PROYECTO SISTEMAS OPERATIVOS</b>
 
-
-
 Asignación FaaS, K8S, Inlets
-
-
-
 
 Especialización en Redes de Comunicaciones I – 2020
 
-
-
--Jonathan Arteaga
--Raúl Andrés Caicedo
--Lucia Fernanda Navarro García
+Jonathan Arteaga
+Raúl Andrés Caicedo
+Lucia Fernanda Navarro García
 
 
 <b>Informe despliegue tecnologías FaaS, K8S, Inlets</b>
 
 Este informe presenta las actividades realizadas para llevar a cabo el despliegue de tecnologías FaaS (Function as a Service), K8S (Kubernetes) e Inlets.
-A continuación se presenta el diagrama con la arquitectura de despliegue
+A continuación se presenta el diagrama con la arquitectura de despliegue.
 
     <b>1. Despliegue de Kubernetes</b>
     
@@ -27,13 +20,13 @@ A continuación se presenta el diagrama con la arquitectura de despliegue
 Minikube es una versión reducida de Kubernetes que permite correr en una máquina virtual, un nodo único de clúster de kubernetes, que hace las veces de máster y workers.
 A continuación se presentan los pasos realizados para instalar Minikube de acuerdo a:
        
-       <b>1) Consideraciones Iniciales:</b> 
+       <b> 1) Consideraciones Iniciales: </b> 
        
  - Verificar si la virtualización es soportada en Linux ejecutando el siguiente comando y verificar que la salida no esta vacía.
            grep -E --color 'vmx|svm' /proc/cpuinfo
            - Instalar un hipervisor: Hipervisor elegido VirtualBox,
            
-        <b>2) Instalar kubectl</b>
+        <b> 2) Instalar kubectl </b>
 	
 Descargar la versión mas reciente 
 curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
