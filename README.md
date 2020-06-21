@@ -222,9 +222,8 @@ echo -n "-sP 192.168.1.0/24" | faas invoke nmap --gateway $gw
     7. Invocación de la función desde Internet a través del Exit Node
            echo -n "-sP 192.168.1.0/24" | faas invoke nmap --gateway 35.233.171.84:8090
 	   
-	   <p align="center">
+<p align="center">
   <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/10.png" width="350" title="hover text">
-
 </p>
 	   
 	   
