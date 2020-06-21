@@ -108,7 +108,7 @@ sudo apt-get update && sudo apt-get -y install google-cloud-sdk
 
 
 <p align="center">
-  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/3.png" width="600px" height="300px">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/3.png" width="400px" height="200px">
 </p>
 
 
