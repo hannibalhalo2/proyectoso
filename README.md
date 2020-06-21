@@ -56,7 +56,7 @@ minikube status
 
 
 <p align="center">
-  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/1.png" width="500px" height="500px">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/1.png" width="800px" height="500px">
 
 </p>
 
