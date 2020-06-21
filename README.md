@@ -188,7 +188,7 @@ ENV read_timeout="60" ENV write_timeout="60"
 
 
 <p align="center">
-  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/8.png" width="800px" height="500px">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/8.png" width="600px" height="300px">
 
 </p>
 
