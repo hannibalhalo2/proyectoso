@@ -63,7 +63,7 @@ sudo install minikube /usr/local/bin/
 
 
 
- proyectoso/Imagenes/1.png 
+  hannibalhalo2/proyectoso/Imagenes/1.png 
 
 
 
