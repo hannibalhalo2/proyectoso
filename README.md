@@ -11,10 +11,10 @@ Especialización en Redes de Comunicaciones I – 2020
 
 
 
-Jonathan Arteaga
-Raúl Andrés Caicedo
-Lucia Fernanda Navarro García
------------------------------------------------------------------------------------------------------------------------
+-Jonathan Arteaga
+-Raúl Andrés Caicedo
+-Lucia Fernanda Navarro García
+
 
 <b>Informe despliegue tecnologías FaaS, K8S, Inlets</b>
 
