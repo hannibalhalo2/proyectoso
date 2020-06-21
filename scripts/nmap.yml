@@ -1,0 +1,9 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://192.168.99.102:31112
+functions:
+  nmap:
+    lang: dockerfile
+    handler: ./nmap
+    image: luciana1711/nmap:latest
