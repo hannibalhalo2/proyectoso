@@ -63,7 +63,7 @@ sudo install minikube /usr/local/bin/
 
 
 <p align="center">
-  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/1.png width="350" title="hover text">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/1.png" width="350" title="hover text">
 
 </p>
 
