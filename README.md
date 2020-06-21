@@ -1,32 +1,27 @@
-<b>INFORME PROYECTO SISTEMAS OPERATIVOS</b>
+<p align="center"> <b>INFORME PROYECTO SISTEMAS OPERATIVOS</b></p>
 
 Asignación FaaS, K8S, Inlets
-
-Especialización en Redes de Comunicaciones I – 2020
 
 Jonathan Arteaga
 Raúl Andrés Caicedo
 Lucia Fernanda Navarro García
 
 
-<b><u>Informe despliegue tecnologías FaaS, K8S, Inlets</u></b>
+<b>Informe despliegue tecnologías FaaS, K8S, Inlets</b>
 
-Este informe presenta las actividades realizadas para llevar a cabo el despliegue de tecnologías FaaS (Function as a Service), K8S (Kubernetes) e Inlets.
-A continuación se presenta el diagrama con la arquitectura de despliegue.
+Este informe presenta las actividades realizadas para llevar a cabo el despliegue de tecnologías FaaS (Function as a Service), K8S (Kubernetes) e Inlets.A continuación se presenta el diagrama con la arquitectura de despliegue.
 
-    <b>1. Despliegue de Kubernetes</b>
+ <b> 1. Despliegue de Kubernetes </b>
     
- El ambiente que se eligió para llevar a cabo el despliegue de kubernetes fue Minikube en sistema Operativo Linux Ubuntu 20.04 LTS.
-Minikube es una versión reducida de Kubernetes que permite correr en una máquina virtual, un nodo único de clúster de kubernetes, que hace las veces de máster y workers.
-A continuación se presentan los pasos realizados para instalar Minikube de acuerdo a:
+ El ambiente que se eligió para llevar a cabo el despliegue de kubernetes fue Minikube en sistema Operativo Linux Ubuntu 20.04 LTS.Minikube es una versión reducida de Kubernetes que permite correr en una máquina virtual, un nodo único de clúster de kubernetes, que hace las veces de máster y workers.A continuación se presentan los pasos realizados para instalar Minikube de acuerdo a:
        
-       <b> 1) Consideraciones Iniciales: </b> 
+ <b> 1) Consideraciones Iniciales: </b> 
        
  - Verificar si la virtualización es soportada en Linux ejecutando el siguiente comando y verificar que la salida no esta vacía.
            grep -E --color 'vmx|svm' /proc/cpuinfo
            - Instalar un hipervisor: Hipervisor elegido VirtualBox,
            
-        <b> 2) Instalar kubectl </b>
+<b> 2) Instalar kubectl </b>
 	
 Descargar la versión mas reciente 
 curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
@@ -40,21 +35,21 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 Verificar que la verion instalada sea la mas reciente
 kubectl version –client
 
- 	<b>3) Instalar Minikube via descarga directa</b>
+<b>3) Instalar Minikube via descarga directa</b>
 
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \  && chmod +x minikube
 
-	<b>4) Adicionar el ejecutable de Minikube al path del usuario</b>
+<b>4) Adicionar el ejecutable de Minikube al path del usuario</b>
 	
 sudo mkdir -p /usr/local/bin/
 sudo install minikube /usr/local/bin/
 
-	<b>5) Instalar helm que es un gestor de paquetes de kubernetes. (Versiones de Ubuntu 16.04 o 
-	superiores ya tienen instalado snap, versiones inferiores no lo incluyen y debe ser instalado previamente). </b>
+<b>5 ) Instalar helm que es un gestor de paquetes de kubernetes. (Versiones de Ubuntu 16.04 o 
+superiores ya tienen instalado snap, versiones inferiores no lo incluyen y debe ser instalado previamente). </b>
            
 	   sudo snap install helm –classic
 
-	<b>6) Confirmar la instalación iniciando el cluster de Minikube </b>
+<b>6) Confirmar la instalación iniciando el cluster de Minikube </b>
 	
 minikube start --driver=virtualbox
 minikube status
@@ -66,7 +61,7 @@ minikube status
 </p>
 
 
-    <b>2. Despliegue de OpenFaas a Minikube</b>
+<b>2. Despliegue de OpenFaas a Minikube</b>
     
        - Crear una cuenta de servicio para el componente del servidor Helm tiller:
            kubectl -n kube-system create sa tiller && kubectl create clusterrolebinding tiller --clusterrole cluster-admin –serviceaccount=kube-system:tiller
@@ -99,8 +94,8 @@ kubectl get pods -n openfaas
 </p>
 
 
-      3. Despliegue de Inlets en Google Cloud Platform
-       Para realizar el despliegue de Inlets se realizaron los siguientes pasos, tomando como referencia el repositorio de git1. 
+<b> 3. Despliegue de Inlets en Google Cloud Platform</b>
+       Para realizar el despliegue de Inlets se realizaron los siguientes pasos, tomando como referencia el repositorio de git. 
        - Instalar los siguientes paquetes: docker, gcloud
            docker
            apt-get update
@@ -114,7 +109,6 @@ sudo apt-get update && sudo apt-get -y install google-cloud-sdk
 
 <p align="center">
   <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/3.png" width="350" title="hover text">
-
 </p>
 
 
@@ -127,7 +121,6 @@ DIGEST="sha256:e1ae8711fa5a7ee30bf577d665a7a91bfe35556f83264c06896765d75b84a99
 
 <p align="center">
   <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/4.png" width="350" title="hover text">
-
 </p>
 
 
