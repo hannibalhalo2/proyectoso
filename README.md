@@ -14,24 +14,26 @@ Especialización en Redes de Comunicaciones I – 2020
 Jonathan Arteaga
 Raúl Andrés Caicedo
 Lucia Fernanda Navarro García
+-----------------------------------------------------------------------------------------------------------------------
 
-
-Informe despliegue tecnologías FaaS, K8S, Inlets
+<b>Informe despliegue tecnologías FaaS, K8S, Inlets</b>
 
 Este informe presenta las actividades realizadas para llevar a cabo el despliegue de tecnologías FaaS (Function as a Service), K8S (Kubernetes) e Inlets.
 A continuación se presenta el diagrama con la arquitectura de despliegue
 
-
-    1. Despliegue de Kubernetes
-       El ambiente que se eligió para llevar a cabo el despliegue de kubernetes fue Minikube en sistema Operativo Linux Ubuntu 20.04 LTS.
-       Minikube es una versión reducida de Kubernetes que permite correr en una máquina virtual, un nodo único de clúster de kubernetes, que hace las veces de máster y workers.
-       A continuación se presentan los pasos realizados para instalar Minikube de acuerdo a 1:
-        1) Consideraciones Iniciales: 
-           - Verificar si la virtualización es soportada en Linux ejecutando el siguiente comando y verificar que la salida no esta vacía.
+    <b>1. Despliegue de Kubernetes</b>
+    
+ El ambiente que se eligió para llevar a cabo el despliegue de kubernetes fue Minikube en sistema Operativo Linux Ubuntu 20.04 LTS.
+Minikube es una versión reducida de Kubernetes que permite correr en una máquina virtual, un nodo único de clúster de kubernetes, que hace las veces de máster y workers.
+A continuación se presentan los pasos realizados para instalar Minikube de acuerdo a:
+       
+       <b>1) Consideraciones Iniciales:</b> 
+       
+ - Verificar si la virtualización es soportada en Linux ejecutando el siguiente comando y verificar que la salida no esta vacía.
            grep -E --color 'vmx|svm' /proc/cpuinfo
            - Instalar un hipervisor: Hipervisor elegido VirtualBox,
            
-        2) Instalar kubectl
+        <b>2) Instalar kubectl</b>
 	
 Descargar la versión mas reciente 
 curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
@@ -45,20 +47,24 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 Verificar que la verion instalada sea la mas reciente
 kubectl version –client
 
- 	3) Instalar Minikube via descarga directa
+ 	<b>3) Instalar Minikube via descarga directa</b>
 
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \  && chmod +x minikube
 
-	4) Adicionar el ejecutable de Minikube al path del usuario
-	sudo mkdir -p /usr/local/bin/
+	<b>4) Adicionar el ejecutable de Minikube al path del usuario</b>
+	
+sudo mkdir -p /usr/local/bin/
 sudo install minikube /usr/local/bin/
 
-	5) Instalar helm que es un gestor de paquetes de kubernetes. (Versiones de Ubuntu 16.04 o 	superiores ya tienen instalado snap, versiones inferiores no lo incluyen y debe ser instalado 	previamente). 
-           sudo snap install helm –classic
+	<b>5) Instalar helm que es un gestor de paquetes de kubernetes. (Versiones de Ubuntu 16.04 o 
+	superiores ya tienen instalado snap, versiones inferiores no lo incluyen y debe ser instalado previamente). </b>
+           
+	   sudo snap install helm –classic
 
-	6) Confirmar la instalación iniciando el cluster de Minikube
-	minikube start --driver=virtualbox
-	minikube status
+	<b>6) Confirmar la instalación iniciando el cluster de Minikube </b>
+	
+minikube start --driver=virtualbox
+minikube status
 
 
 <p align="center">
@@ -67,7 +73,8 @@ sudo install minikube /usr/local/bin/
 </p>
 
 
-    2. Despliegue de OpenFaas a Minikube
+    <b>2. Despliegue de OpenFaas a Minikube</b>
+    
        - Crear una cuenta de servicio para el componente del servidor Helm tiller:
            kubectl -n kube-system create sa tiller && kubectl create clusterrolebinding tiller --clusterrole cluster-admin –serviceaccount=kube-system:tiller
        - Crear namespaces  para los componentes y funciones fundamentales de OpenFaaS:
@@ -134,9 +141,9 @@ DIGEST="sha256:e1ae8711fa5a7ee30bf577d665a7a91bfe35556f83264c06896765d75b84a99
 Después de tener la configuración y despliegue del Exit Node procedemos a correr la función que se desea exponer.
    
    
-   4. Despliegue de Función
+  <b> 4. Despliegue de Función</b>
 
-       Para realizar esta tarea se utilizó la herramienta de escaneo de red Nmap. Se realizo el despliegue de una función que permite realizar el descubrimiento de los equipos conectados a la red privada donde se encuentra desplegado el clúster de kubernetes. Se siguieron los siguientes pasos1:
+Para realizar esta tarea se utilizó la herramienta de escaneo de red Nmap. Se realizo el despliegue de una función que permite realizar el descubrimiento de los equipos conectados a la red privada donde se encuentra desplegado el clúster de kubernetes. Se siguieron los siguientes pasos1:
        -Invocar la función nmap usando lenguaje “Dockerfile”
            faas new --lang dockerfile nmap
        - Este comando crea 2 archivos nmap.yml y Dockerfile en el directorio nmap
@@ -188,7 +195,8 @@ ENV read_timeout="60" ENV write_timeout="60"
 </p>
 
 
-    5. Invocación local de la función
+   <b> 5. Invocación local de la función</b>
+   
        export gw=http://$(minikube ip):31112
        echo -n "-sP 192.168.0.0/24" | faas invoke nmap --gateway $gw
 
@@ -201,7 +209,8 @@ ENV read_timeout="60" ENV write_timeout="60"
 Se observa que la función se ejecuta y arroja los hosts que se encuentran arriba
    
    
-   6. Ejecutando el cliente inlets
+  <b> 6. Ejecutando el cliente inlets</b>
+  
 Con el Exit Node en GCP y la función desplegada se procedió a ejecutar el cliente Inlets.
 ./correr-cliente-inlets.sh
 
@@ -219,7 +228,7 @@ echo -n "-sP 192.168.1.0/24" | faas invoke nmap --gateway $gw
 
 
 
-    7. Invocación de la función desde Internet a través del Exit Node
+   <b> 7. Invocación de la función desde Internet a través del Exit Node</b>
            echo -n "-sP 192.168.1.0/24" | faas invoke nmap --gateway 35.233.171.84:8090
 	   
 <p align="center">
