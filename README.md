@@ -32,9 +32,8 @@ A continuación se presenta el diagrama con la arquitectura de despliegue
            - Instalar un hipervisor: Hipervisor elegido VirtualBox,
            
         2) Instalar kubectl
-           
-           
-               Descargar la versión mas reciente 
+	
+Descargar la versión mas reciente 
 curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
 
 Dar permisos de ejecución al binario kubectl
@@ -68,9 +67,6 @@ sudo install minikube /usr/local/bin/
 </p>
 
 
-
-
-
     2. Despliegue de OpenFaas a Minikube
        - Crear una cuenta de servicio para el componente del servidor Helm tiller:
            kubectl -n kube-system create sa tiller && kubectl create clusterrolebinding tiller --clusterrole cluster-admin –serviceaccount=kube-system:tiller
@@ -93,10 +89,14 @@ sudo install minikube /usr/local/bin/
            export OPENFAAS_URL=$(minikube ip):31112
        -Después de que todos los Pods de OpenFaas estén iniciados se envía comando de Login:
            echo -n $PASSWORD | faas-cli login -g http://$OPENFAAS_URL -u admin — password-stdin
+
 -El siguiente comando entrega los pods OpenFaas instalados en el clúster de minikube.
 kubectl get pods -n openfaas
 
+<p align="center">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/2.png" width="350" title="hover text">
 
+</p>
 
 
       3. Despliegue de Inlets en Google Cloud Platform
@@ -112,7 +112,10 @@ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyr
 sudo apt-get update && sudo apt-get -y install google-cloud-sdk
 
 
+<p align="center">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/3.png" width="350" title="hover text">
 
+</p>
 
 
 
@@ -122,13 +125,16 @@ TOKEN="aca84fefcb3aad602c52531cca66aff4bf79cc58b1c211d62ee5afd4dc379ddd"
 DIGEST="sha256:e1ae8711fa5a7ee30bf577d665a7a91bfe35556f83264c06896765d75b84a99
 
 
+<p align="center">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/4.png" width="350" title="hover text">
 
-
-
+</p>
 
 
 Después de tener la configuración y despliegue del Exit Node procedemos a correr la función que se desea exponer.
-    4. Despliegue de Función
+   
+   
+   4. Despliegue de Función
 
        Para realizar esta tarea se utilizó la herramienta de escaneo de red Nmap. Se realizo el despliegue de una función que permite realizar el descubrimiento de los equipos conectados a la red privada donde se encuentra desplegado el clúster de kubernetes. Se siguieron los siguientes pasos1:
        -Invocar la función nmap usando lenguaje “Dockerfile”
@@ -137,31 +143,10 @@ Después de tener la configuración y despliegue del Exit Node procedemos a corr
 
 
 
+<p align="center">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/5.png" width="350" title="hover text">
 
-
-
-
-
-
--Se edito el archivo Dockerfile y se añadieron las siguientes lineas
-Comando que añade el paquete nmap a la imagen de docker:
-RUN apk add --no-cache nmap 
-Se modificó ENV fprocess añadiendo el comando xargs nmap que permite pasar parametros cuando se invoca la función.
-ENV fprocess="xargs nmap"
-Y se añadieron las siguientes lineas para extender el tiempo que podría tomar la ejecución de nmap.
-ENV read_timeout="60" ENV write_timeout="60"
-- Construcción, Envío y Despliegue de la función.
-
-
-
-
-
-
-
-
-
-
-
+</p>
 
 
 
@@ -178,9 +163,29 @@ ENV read_timeout="60" ENV write_timeout="60"
 
 
 
+<p align="center">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/6.png" width="350" title="hover text">
+
+</p>
 
 
 
+
+-Se edito el archivo Dockerfile y se añadieron las siguientes lineas
+Comando que añade el paquete nmap a la imagen de docker:
+RUN apk add --no-cache nmap 
+Se modificó ENV fprocess añadiendo el comando xargs nmap que permite pasar parametros cuando se invoca la función.
+ENV fprocess="xargs nmap"
+Y se añadieron las siguientes lineas para extender el tiempo que podría tomar la ejecución de nmap.
+ENV read_timeout="60" ENV write_timeout="60"
+- Construcción, Envío y Despliegue de la función.
+
+
+
+<p align="center">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/7.png" width="350" title="hover text">
+
+</p>
 
 
     5. Invocación local de la función
@@ -188,18 +193,23 @@ ENV read_timeout="60" ENV write_timeout="60"
        echo -n "-sP 192.168.0.0/24" | faas invoke nmap --gateway $gw
 
 
+<p align="center">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/8.png" width="350" title="hover text">
 
-
-
-
+</p>
 
 Se observa que la función se ejecuta y arroja los hosts que se encuentran arriba
-    6. Ejecutando el cliente inlets
+   
+   
+   6. Ejecutando el cliente inlets
 Con el Exit Node en GCP y la función desplegada se procedió a ejecutar el cliente Inlets.
 ./correr-cliente-inlets.sh
 
 
+<p align="center">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/9.png" width="350" title="hover text">
 
+</p>
 
 
 
@@ -211,3 +221,11 @@ echo -n "-sP 192.168.1.0/24" | faas invoke nmap --gateway $gw
 
     7. Invocación de la función desde Internet a través del Exit Node
            echo -n "-sP 192.168.1.0/24" | faas invoke nmap --gateway 35.233.171.84:8090
+	   
+	   <p align="center">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/10.png" width="350" title="hover text">
+
+</p>
+	   
+	   
+	   
