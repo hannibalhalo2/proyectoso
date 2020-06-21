@@ -89,7 +89,7 @@ minikube status
 kubectl get pods -n openfaas
 
 <p align="center">
-  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/2.png" width="350" title="hover text">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/2.png" width="800px" height="500px">
 
 </p>
 
@@ -108,7 +108,7 @@ sudo apt-get update && sudo apt-get -y install google-cloud-sdk
 
 
 <p align="center">
-  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/3.png" width="350" title="hover text">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/3.png" width="800px" height="500px">
 </p>
 
 
@@ -120,7 +120,7 @@ DIGEST="sha256:e1ae8711fa5a7ee30bf577d665a7a91bfe35556f83264c06896765d75b84a99
 
 
 <p align="center">
-  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/4.png" width="350" title="hover text">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/4.png" width="800px" height="500px">
 </p>
 
 
@@ -137,7 +137,7 @@ Para realizar esta tarea se utilizó la herramienta de escaneo de red Nmap. Se r
 
 
 <p align="center">
-  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/5.png" width="350" title="hover text">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/5.png" width="800px" height="500px"
 
 </p>
 
@@ -157,7 +157,7 @@ ENV read_timeout="60" ENV write_timeout="60"
 
 
 <p align="center">
-  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/6.png" width="350" title="hover text">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/6.png" width="800px" height="500px"
 
 </p>
 
@@ -176,7 +176,7 @@ ENV read_timeout="60" ENV write_timeout="60"
 
 
 <p align="center">
-  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/7.png" width="350" title="hover text">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/7.png" width="800px" height="500px">
 
 </p>
 
@@ -188,7 +188,7 @@ ENV read_timeout="60" ENV write_timeout="60"
 
 
 <p align="center">
-  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/8.png" width="350" title="hover text">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/8.png" width="800px" height="500px">
 
 </p>
 
@@ -202,7 +202,7 @@ Con el Exit Node en GCP y la función desplegada se procedió a ejecutar el clie
 
 
 <p align="center">
-  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/9.png" width="350" title="hover text">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/9.png" width="800px" height="500px">
 
 </p>
 
@@ -218,7 +218,7 @@ echo -n "-sP 192.168.1.0/24" | faas invoke nmap --gateway $gw
            echo -n "-sP 192.168.1.0/24" | faas invoke nmap --gateway 35.233.171.84:8090
 	   
 <p align="center">
-  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/10.png" width="350" title="hover text">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/10.png" width="800px" height="500px">
 </p>
 	   
 	   
