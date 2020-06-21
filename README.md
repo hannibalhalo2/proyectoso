@@ -89,7 +89,7 @@ minikube status
 kubectl get pods -n openfaas
 
 <p align="center">
-  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/2.png" width="400px" height="200px">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/2.png" width="200px" height="100px">
 
 </p>
 
