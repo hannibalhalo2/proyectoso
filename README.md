@@ -1,11 +1,11 @@
 <p align="center"> <b>INFORME PROYECTO SISTEMAS OPERATIVOS</b></p>
 
+
 Asignación FaaS, K8S, Inlets
 
-Jonathan Arteaga
-Raúl Andrés Caicedo
 Lucia Fernanda Navarro García
-
+Raúl Andrés Caicedo
+Jonathan Arteaga
 
 <b>Informe despliegue tecnologías FaaS, K8S, Inlets</b>
 
