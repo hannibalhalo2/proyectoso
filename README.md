@@ -217,7 +217,6 @@ Se observó la ejecución de la función y el resultado de los hosts que se encu
 
 
 
-
    <b> 7. Invocación de la función desde Internet a través del Exit Node</b>
 
            echo -n "-sP 192.168.1.0/24" | faas invoke nmap --gateway 35.233.171.84:8090
