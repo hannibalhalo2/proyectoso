@@ -13,6 +13,11 @@ Asignación FaaS, K8S, Inlets
 
 Este informe presenta las actividades realizadas para llevar a cabo el despliegue de tecnologías FaaS (Function as a Service), K8S (Kubernetes) e Inlets. A continuación se presenta el diagrama con la arquitectura de despliegue.
 
+<p align="center">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/Diagrama.png">
+
+</p>
+
  <b> 1. Despliegue de Kubernetes </b>
 
  El ambiente que se eligió para llevar a cabo el despliegue de kubernetes fue Minikube en sistema Operativo Linux Ubuntu 20.04 LTS. Minikube es una versión reducida de Kubernetes que permite correr en una máquina virtual un nodo único de clúster de kubernetes, que hace las veces de máster y workers. A continuación se presentan los pasos realizados para instalar Minikube.
