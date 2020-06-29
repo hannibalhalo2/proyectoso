@@ -3,12 +3,6 @@
 
 Asignación FaaS, K8S, Inlets
 
-          Lucia Fernanda Navarro García
-
-          Raúl Andrés Caicedo
-
-          Jonathan Arteaga
-
 <b>Informe despliegue tecnologías FaaS, K8S, Inlets</b>
 
 Este informe presenta las actividades realizadas para llevar a cabo el despliegue de tecnologías FaaS (Function as a Service), K8S (Kubernetes) e Inlets. A continuación se presenta el diagrama con la arquitectura de despliegue.
@@ -68,10 +62,6 @@ superiores ya tienen instalado snap, versiones inferiores no lo incluyen y debe 
 
            minikube status
 
-<p align="center">
-  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/1.png" width="800px" height="500px">
-
-</p>
 
 <b>2. Despliegue de OpenFaas a Minikube</b>
 
@@ -101,10 +91,6 @@ superiores ya tienen instalado snap, versiones inferiores no lo incluyen y debe 
 
           kubectl get pods -n openfaas
 
-<p align="center">
-  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/2.png" width="400px" height="200px">
-
-</p>
 
 <b> 3. Despliegue de Inlets en Google Cloud Platform</b>
 
@@ -134,10 +120,6 @@ Para realizar el despliegue de Inlets se realizaron los siguientes pasos, tomand
           REMOTE="35.233.171.84:8090"
           TOKEN="aca84fefcb3aad602c52531cca66aff4bf79cc58b1c211d62ee5afd4dc379ddd"
           DIGEST="sha256:e1ae8711fa5a7ee30bf577d665a7a91bfe35556f83264c06896765d75b84a99
-
-<p align="center">
-  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/4.png" width="800px" height="500px">
-</p>
 
 
 Después de tener la configuración y despliegue del Exit Node procedemos a correr la función que se desea exponer.
@@ -174,10 +156,6 @@ Para realizar esta tarea se utilizó la herramienta de escaneo de red Nmap. Se r
 
           ENV read_timeout="60" ENV write_timeout="60"
 
-<p align="center">
-  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/6.png" width="800px" height="500px"
-
-</p>
 
  - Se edito el archivo [nmap.yml](scripts/nmap.yml) y se modifico el puerto y la dirección IP de la url de la variable gateway con la Ip de Minikube, puerto 31112.
 
@@ -185,12 +163,6 @@ Para realizar esta tarea se utilizó la herramienta de escaneo de red Nmap. Se r
 
   - Construcción, Envío y Despliegue de la función.
 
-
-
-<p align="center">
-  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/7.png" width="800px" height="500px">
-
-</p>
 
 
    <b> 5. Invocación local de la función</b>
@@ -214,7 +186,7 @@ Se observó la ejecución de la función y el resultado de los hosts que se encu
 
 
 <p align="center">
-  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/9.png" width="800px" height="500px">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/9.png">
 
 </p>
 
@@ -235,7 +207,7 @@ Se observó la ejecución de la función y el resultado de los hosts que se encu
 
 ENLACES DE REFERENCIA
 
-        https://medium.com/faun/getting-started-with-openfaas-on-minikube-634502c7acdf
-        https://kubernetes.io/docs/tasks/tools/install-minikube/
-        https://blog.alexellis.io/cli-functions-with-openfaas/
+[https://medium.com/faun/getting-started-with-openfaas-on-minikube-634502c7acdf](https://medium.com/faun/getting-started-with-openfaas-on-minikube-634502c7acdf)
+[https://kubernetes.io/docs/tasks/tools/install-minikube/](https://kubernetes.io/docs/tasks/tools/install-minikube/)
+[https://blog.alexellis.io/cli-functions-with-openfaas/](https://blog.alexellis.io/cli-functions-with-openfaas/)
                                                                                                                                   	   
