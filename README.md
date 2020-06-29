@@ -163,7 +163,7 @@ Para realizar esta tarea se utilizó la herramienta de escaneo de red Nmap. Se r
 
 
 <p align="center">
-  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/8.png">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/9.png">
 
 </p>
 
@@ -177,7 +177,7 @@ Se observó la ejecución de la función y el resultado de los hosts que se encu
 
 
 <p align="center">
-  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/9.png">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/8.png">
 
 </p>
 
