@@ -111,9 +111,6 @@ Para realizar el despliegue de Inlets se realizaron los siguientes pasos, tomand
           sudo apt-get update && sudo apt-get -y install google-cloud-sdk
 
 
-<p align="center">
-  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/3.png" width="400px" height="200px">
-</p>
 
 - Después de realizar la instalación se ejecuto el script encargado de crear el Exit Node en GCP [crear-inlets-exit-node.sh](/scripts/crear-inlets-exit-node.sh), y se guardo la información de las variables que se requieren para ejecutar el cliente de inlets que se comunica con el contenedor que está en GCP.
 
@@ -134,12 +131,6 @@ Para realizar esta tarea se utilizó la herramienta de escaneo de red Nmap. Se r
           faas new --lang dockerfile nmap
 
   - Este comando creo 2 archivos nmap.yml y Dockerfile en el directorio nmap
-
-<p align="center">
-  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/5.png" width="800px" height="500px"
-
-</p>
-
 
 
   - Se edito el archivo [Dockerfile](scripts/Dockerfile) y se añadieron las siguientes lineas:
@@ -172,7 +163,7 @@ Para realizar esta tarea se utilizó la herramienta de escaneo de red Nmap. Se r
 
 
 <p align="center">
-  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/8.png" width="600px" height="300px">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/8.png">
 
 </p>
 
@@ -199,7 +190,7 @@ Se observó la ejecución de la función y el resultado de los hosts que se encu
            echo -n "-sP 192.168.1.0/24" | faas invoke nmap --gateway 35.233.171.84:8090
 
 <p align="center">
-  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/10.png" width="800px" height="500px">
+  <img src="https://github.com/hannibalhalo2/proyectoso/blob/master/Imagenes/10.png">
 </p>
 
 [ENLACE A VIDEO ASCIINEMA](https://asciinema.org/connect/65a9828a-e49b-4316-ade2-c790c1189ca7)
@@ -207,7 +198,9 @@ Se observó la ejecución de la función y el resultado de los hosts que se encu
 
 ENLACES DE REFERENCIA
 
-[https://medium.com/faun/getting-started-with-openfaas-on-minikube-634502c7acdf](https://medium.com/faun/getting-started-with-openfaas-on-minikube-634502c7acdf)
-[https://kubernetes.io/docs/tasks/tools/install-minikube/](https://kubernetes.io/docs/tasks/tools/install-minikube/)
-[https://blog.alexellis.io/cli-functions-with-openfaas/](https://blog.alexellis.io/cli-functions-with-openfaas/)
+  [https://medium.com/faun/getting-started-with-openfaas-on-minikube-634502c7acdf](https://medium.com/faun/getting-started-with-openfaas-on-minikube-634502c7acdf)
+
+  [https://kubernetes.io/docs/tasks/tools/install-minikube/](https://kubernetes.io/docs/tasks/tools/install-minikube/)
+  
+  [https://blog.alexellis.io/cli-functions-with-openfaas/](https://blog.alexellis.io/cli-functions-with-openfaas/)
                                                                                                                                   	   
