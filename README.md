@@ -173,7 +173,7 @@ Se observó la ejecución de la función y el resultado de los hosts que se encu
 
  Con el Exit Node en GCP y la función desplegada se procedió a ejecutar el script del cliente Inlets.
 
-        [correr-cliente-inlets.sh](scripts/correr-cliente-inlets.sh)
+  [correr-cliente-inlets.sh](scripts/correr-cliente-inlets.sh)
 
 
 <p align="center">
